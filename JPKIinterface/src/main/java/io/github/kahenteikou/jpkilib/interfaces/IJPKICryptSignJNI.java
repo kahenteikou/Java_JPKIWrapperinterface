@@ -1,11 +1,6 @@
 package io.github.kahenteikou.jpkilib.interfaces;
 
 public interface IJPKICryptSignJNI {
-    enum JPKI_CRYPTSIGN_OPTS{
-        JPKI_CALG_SHA_256,
-        JPKI_CALG_SHA1,
-        JPKI_VERIFYCONTEXT
-    }
     long certCreateCertificateContext(byte[] certValue) throws E_JPKICryptSignJNIException;
     void certFreeCertificateContext(long hCert) throws E_JPKICryptSignJNIException;
     byte[]  certGetPublicKeyInfo(long hCert) throws E_JPKICryptSignJNIException;
