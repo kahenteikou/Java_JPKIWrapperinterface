@@ -1,6 +1,6 @@
 package io.github.kahenteikou.jpkilib.core;
 
-import io.github.kahenteikou.jpkilib.interfaces.E_JPKICryptAuthJNIException;
+import io.github.kahenteikou.jpkilib.interfaces.E_JPKICryptSignJNIException;
 import io.github.kahenteikou.jpkilib.interfaces.IJPKICryptSignJNI;
 
 import java.io.File;
@@ -23,92 +23,92 @@ public class JPKICryptSign_E implements IJPKICryptSignJNI {
         this(System.getenv("ProgramFiles")+"\\JPKILib\\Javalib64\\JPKICryptSignJNI.jar",ModuleJar_Path);
     }
     @Override
-    public long certCreateCertificateContext(byte[] certValue) throws E_JPKICryptAuthJNIException {
+    public long certCreateCertificateContext(byte[] certValue) throws E_JPKICryptSignJNIException {
         return target_class.certCreateCertificateContext(certValue);
     }
 
     @Override
-    public void certFreeCertificateContext(long hCert) throws E_JPKICryptAuthJNIException {
+    public void certFreeCertificateContext(long hCert) throws E_JPKICryptSignJNIException {
         target_class.certFreeCertificateContext(hCert);
     }
 
     @Override
-    public byte[] certGetPublicKeyInfo(long hCert) throws E_JPKICryptAuthJNIException {
+    public byte[] certGetPublicKeyInfo(long hCert) throws E_JPKICryptSignJNIException {
         return target_class.certGetPublicKeyInfo(hCert);
     }
 
     @Override
-    public long cryptAcquireContext(int flag) throws E_JPKICryptAuthJNIException {
+    public long cryptAcquireContext(int flag) throws E_JPKICryptSignJNIException {
         return target_class.cryptAcquireContext(flag);
     }
 
     @Override
-    public long cryptCreateHash(long hProv) throws E_JPKICryptAuthJNIException {
+    public long cryptCreateHash(long hProv) throws E_JPKICryptSignJNIException {
         return target_class.cryptCreateHash(hProv);
     }
 
     @Override
-    public long cryptCreateHash(long hProv, int algid) throws E_JPKICryptAuthJNIException {
+    public long cryptCreateHash(long hProv, int algid) throws E_JPKICryptSignJNIException {
         return target_class.cryptCreateHash(hProv,algid);
     }
 
     @Override
-    public void cryptDestroyHash(long hHash) throws E_JPKICryptAuthJNIException {
+    public void cryptDestroyHash(long hHash) throws E_JPKICryptSignJNIException {
         target_class.cryptDestroyHash(hHash);
     }
 
     @Override
-    public void cryptDestroyKey(long hKey) throws E_JPKICryptAuthJNIException {
+    public void cryptDestroyKey(long hKey) throws E_JPKICryptSignJNIException {
         target_class.cryptDestroyKey(hKey);
     }
 
     @Override
-    public byte[] cryptGetCertificateValue(long hKey) throws E_JPKICryptAuthJNIException {
+    public byte[] cryptGetCertificateValue(long hKey) throws E_JPKICryptSignJNIException {
         return target_class.cryptGetCertificateValue(hKey);
     }
 
     @Override
-    public byte[] cryptGetHashValue(long hHash) throws E_JPKICryptAuthJNIException {
+    public byte[] cryptGetHashValue(long hHash) throws E_JPKICryptSignJNIException {
         return target_class.cryptGetHashValue(hHash);
     }
 
     @Override
-    public byte[] cryptGetRootCertificateValue(long hProv) throws E_JPKICryptAuthJNIException {
+    public byte[] cryptGetRootCertificateValue(long hProv) throws E_JPKICryptSignJNIException {
         return target_class.cryptGetRootCertificateValue(hProv);
     }
 
     @Override
-    public long cryptGetUserKey(long hProv) throws E_JPKICryptAuthJNIException {
+    public long cryptGetUserKey(long hProv) throws E_JPKICryptSignJNIException {
         return target_class.cryptGetUserKey(hProv);
     }
 
     @Override
-    public void cryptHashData(long hHash, byte[] data) throws E_JPKICryptAuthJNIException {
+    public void cryptHashData(long hHash, byte[] data) throws E_JPKICryptSignJNIException {
         target_class.cryptHashData(hHash,data);
     }
 
     @Override
-    public long cryptImportPublicKey(long hProv, byte[] publicKeyInfo) throws E_JPKICryptAuthJNIException {
+    public long cryptImportPublicKey(long hProv, byte[] publicKeyInfo) throws E_JPKICryptSignJNIException {
         return target_class.cryptImportPublicKey(hProv,publicKeyInfo);
     }
 
     @Override
-    public void cryptReleaseContext(long hProv) throws E_JPKICryptAuthJNIException {
+    public void cryptReleaseContext(long hProv) throws E_JPKICryptSignJNIException {
         target_class.cryptReleaseContext(hProv);
     }
 
     @Override
-    public void cryptSetHashValue(long hHash, byte[] data) throws E_JPKICryptAuthJNIException {
+    public void cryptSetHashValue(long hHash, byte[] data) throws E_JPKICryptSignJNIException {
         target_class.cryptSetHashValue(hHash,data);
     }
 
     @Override
-    public byte[] cryptSignHash(long hHash) throws E_JPKICryptAuthJNIException {
+    public byte[] cryptSignHash(long hHash) throws E_JPKICryptSignJNIException {
         return target_class.cryptSignHash(hHash);
     }
 
     @Override
-    public boolean cryptVerifySignature(long hHash, byte[] signature, long hPubKey) throws E_JPKICryptAuthJNIException {
+    public boolean cryptVerifySignature(long hHash, byte[] signature, long hPubKey) throws E_JPKICryptSignJNIException {
         return target_class.cryptVerifySignature(hHash,signature,hPubKey);
     }
 }

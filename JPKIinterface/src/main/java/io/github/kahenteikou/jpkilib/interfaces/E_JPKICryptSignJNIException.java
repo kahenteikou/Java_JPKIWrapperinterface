@@ -1,7 +1,8 @@
 package io.github.kahenteikou.jpkilib.interfaces;
 
-public class E_JPKICryptAuthJNIException extends Exception{
+public class E_JPKICryptSignJNIException extends Exception{
     public enum JPKI_ERR{
+        JPKI_NOERR,
         JPKI_ERR_JAVA_NOMEMORY,
         JPKI_ERR_NOMEMORY,
         JPKI_ERR_PARAM,
@@ -18,22 +19,22 @@ public class E_JPKICryptAuthJNIException extends Exception{
         JPKI_WIN_NOT_READY,
         JPKI_WIN_UNKNOWN_CARD
     }
-    private static int errcode = 0;
-    private static int werrcode = 0;
+    private static JPKI_ERR errcode = JPKI_ERR.JPKI_NOERR;
+    private static JPKI_ERR werrcode = JPKI_ERR.JPKI_NOERR;
 
-    public E_JPKICryptAuthJNIException() {
+    public E_JPKICryptSignJNIException() {
     }
 
-    public E_JPKICryptAuthJNIException(int errcode, int errcode_w, String strDetail) {
+    public E_JPKICryptSignJNIException(JPKI_ERR errcodea, JPKI_ERR errcode_w, String strDetail) {
         super(strDetail);
-        errcode = errcode;
+        errcode = errcodea;
         werrcode = errcode_w;
     }
 
-    public int getErrCode() {
+    public JPKI_ERR getErrCode() {
         return errcode;
     }
-    public int getWinErrCode() {
+    public JPKI_ERR getWinErrCode() {
         return werrcode;
     }
 }

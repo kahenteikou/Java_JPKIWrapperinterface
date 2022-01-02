@@ -1,6 +1,6 @@
 package io.github.kahenteikou.jpkitest;
 import io.github.kahenteikou.jpkilib.core.JPKICryptSign_E;
-import io.github.kahenteikou.jpkilib.interfaces.E_JPKICryptAuthJNIException;
+import io.github.kahenteikou.jpkilib.interfaces.E_JPKICryptSignJNIException;
 
 import java.net.MalformedURLException;
 
@@ -29,7 +29,7 @@ public class MainApp {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
-            }catch (E_JPKICryptAuthJNIException e){
+            }catch (E_JPKICryptSignJNIException e){
                 e.printStackTrace();
             }
 
