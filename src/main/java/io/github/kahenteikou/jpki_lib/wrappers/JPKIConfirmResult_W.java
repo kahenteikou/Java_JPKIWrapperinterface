@@ -9,8 +9,8 @@ public class JPKIConfirmResult_W implements IJPKIConfirmResult {
         confresult=reskun;
     }
     @Override
-    public int getCode() {
-        return confresult.getCode();
+    public ConfirmEnum getCode() {
+        return IJPKIConfirmResult.toConfirmEnum(confresult.getCode());
     }
 
     @Override

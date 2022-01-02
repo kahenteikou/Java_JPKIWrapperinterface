@@ -20,7 +20,7 @@ public class JPKIConfirmResult_E implements IJPKIConfirmResult {
         target_class=(IJPKIConfirmResult) cl.newInstance();
     }
     @Override
-    public int getCode() {
+    public ConfirmEnum getCode() {
         return target_class.getCode();
     }
 
