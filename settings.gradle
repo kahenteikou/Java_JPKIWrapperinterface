@@ -1,2 +1,4 @@
 rootProject.name = 'Java_JPKIWrapperinterface'
 include 'JPKIinterface'
+include 'JPKILibCore'
+include 'JPKI_TestApp'

@@ -1,25 +1,26 @@
-
 plugins {
     id 'java'
+    id 'application'
 }
 group 'io.github.kahenteikou'
 version '1.0-SNAPSHOT'
-
+mainClassName="io.github.kahenteikou.jpkitest.MainApp"
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation project(":JPKIinterface")
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    //compile fileTree(dir: 'libs', include: '*.jar')
-    implementation fileTree(dir:System.getenv()['ProgramFiles']+"\\JPKILib\\Javalib64",include:"*.jar")
-}
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
 }
+dependencies {
+    implementation project(":JPKIinterface")
+    implementation project(":JPKILibCore")
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    //compile fileTree(dir: 'libs', include: '*.jar')
+}
+
 test {
     useJUnitPlatform()
 }
