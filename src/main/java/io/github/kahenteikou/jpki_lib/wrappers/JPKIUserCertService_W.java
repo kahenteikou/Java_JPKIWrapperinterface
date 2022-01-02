@@ -10,6 +10,10 @@ public class JPKIUserCertService_W extends EX_JPKIUserCertService {
         service=new JPKIUserCertService(certData);
     }
 
+    public JPKIUserCertService_W() {
+        super();
+        service=new JPKIUserCertService();
+    }
     @Override
     public IJPKIConfirmResult confirm()throws E_JPKIUserCertException {
         try {

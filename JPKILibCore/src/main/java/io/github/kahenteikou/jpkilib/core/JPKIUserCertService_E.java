@@ -11,20 +11,24 @@ import java.net.URLClassLoader;
 
 public class JPKIUserCertService_E{
     private static Constructor<?> yobidasiconstructor=null;
+    private static Class yobidasicls=null;
     public static void Load_Lib(String JPKIJar_Path,String ModuleJar_path) throws ClassNotFoundException, MalformedURLException, NoSuchMethodException {
         File jpkijarfile=new File(JPKIJar_Path);
         File modulejarfile=new File(ModuleJar_path);
         URLClassLoader loader=URLClassLoader.newInstance(new URL[]{jpkijarfile.toURI().toURL(),modulejarfile.toURI().toURL()});
-        Class yobidasiclasskun=loader.loadClass("io.github.kahenteikou.jpki_lib.wrappers.JPKICryptSign_W");
-        yobidasiconstructor=yobidasiclasskun.getConstructor(byte[].class);
+        yobidasicls=loader.loadClass("io.github.kahenteikou.jpki_lib.wrappers.JPKIUserCertService_W");
+        yobidasiconstructor=yobidasicls.getConstructor(byte[].class);
 
     }
     public static void Load_Lib(String ModuleJar_path) throws MalformedURLException, ClassNotFoundException, NoSuchMethodException {
-        Load_Lib(System.getenv("ProgramFiles")+"\\JPKILib\\Javalib64\\JPKICryptSignJNI.jar",ModuleJar_path);
+        Load_Lib(System.getenv("ProgramFiles")+"\\JPKILib\\Javalib64\\JPKIUserCertService.jar",ModuleJar_path);
     }
     private EX_JPKIUserCertService target_class;
     public JPKIUserCertService_E(byte[] data) throws InstantiationException, IllegalAccessException, InvocationTargetException {
         target_class=(EX_JPKIUserCertService) yobidasiconstructor.newInstance(data);
+    }
+    public JPKIUserCertService_E() throws InstantiationException, IllegalAccessException {
+        target_class=(EX_JPKIUserCertService)yobidasicls.newInstance();
     }
     public IJPKIConfirmResult confirm() throws E_JPKIUserCertException{
         return target_class.confirm();
