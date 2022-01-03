@@ -16,6 +16,9 @@ dependencies {
     //compile fileTree(dir: 'libs', include: '*.jar')
     implementation fileTree(dir:System.getenv()['ProgramFiles']+"\\JPKILib\\Javalib64",include:"*.jar")
 }
+tasks.withType(Jar) {
+    destinationDir = file(project(":JPKILibCore").projectDir.toString()+ "/src/main/resources")
+}
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11

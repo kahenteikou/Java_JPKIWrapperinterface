@@ -20,7 +20,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     //compile fileTree(dir: 'libs', include: '*.jar')
 }
-
+task tinpo{
+    System.out.println(project(":JPKILibCore").projectDir)
+}
 test {
     useJUnitPlatform()
 }
